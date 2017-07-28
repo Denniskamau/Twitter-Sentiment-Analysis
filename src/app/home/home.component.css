@@ -1,0 +1,14 @@
+.jumbotron{
+    width: 900px;
+    position: absolute;
+    left: 30%;
+    top: 30%;
+    border-width: 10px 10px 10px 10px;
+}
+
+.form-horizontal{
+    position:absolute;
+    top: 30%;
+    width: 300px;
+    border-width: 10px 10px 10px 10px;
+}
