@@ -12,6 +12,10 @@ router.get('/users', function(req,res,next){
       }
       res.json(users);
   });
+<<<<<<< HEAD
+
+=======
+>>>>>>> d2fecab55a4f8db2e8db247178871dfe0ea65455
 });
 //get single user
 router.get('/user/:id', function(req, res, next){
@@ -24,9 +28,15 @@ router.get('/user/:id', function(req, res, next){
 });
 
 //save users
+<<<<<<< HEAD
+router.post('/user', function(req,res,next){
+    var user = req.body;
+    if(!user.username || !(user.email +'') ){
+=======
 router.post('/user', function(req,re,next){
     var user = req.body;
     if(!user.name || !(user.email +'')){
+>>>>>>> d2fecab55a4f8db2e8db247178871dfe0ea65455
         res.status(400);
         res.json({
             "error":"bad data"
@@ -35,7 +45,11 @@ router.post('/user', function(req,re,next){
         db.users.save(user, function(err,user){
             if (err){
                 res.send(err);
+<<<<<<< HEAD
+            }       
+=======
             }
+>>>>>>> d2fecab55a4f8db2e8db247178871dfe0ea65455
             res.json(user);
         });
     }

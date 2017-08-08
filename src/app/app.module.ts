@@ -17,7 +17,12 @@ const appRoutes: Routes = [
   { path:'', component:HomeComponent},
   { path: 'login', component: LoginComponent },
   { path: 'register',      component: RegisterComponent},
+<<<<<<< HEAD
+  {path: 'users', component:UsersComponent},
+  {path: 'dashboard', component:DashboardComponent}
+=======
   {path: 'users', component:UsersComponent}
+>>>>>>> d2fecab55a4f8db2e8db247178871dfe0ea65455
 ]
 
 @NgModule({

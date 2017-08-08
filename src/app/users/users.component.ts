@@ -21,7 +21,11 @@ export class UsersComponent implements OnInit {
       })
     }
 
+<<<<<<< HEAD
+  addUser(event){
+=======
   addTask(event){
+>>>>>>> d2fecab55a4f8db2e8db247178871dfe0ea65455
     event.preventDefault();
     var newUser = {
       username:this.username,
