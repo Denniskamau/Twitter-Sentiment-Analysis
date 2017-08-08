@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { UserService } from '../services/user.service';
 import {User} from '../../User'
 @Component({
@@ -40,19 +39,3 @@ export class RegisterComponent implements OnInit {
   }
 
 }
-=======
-
-@Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
-})
-export class RegisterComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
->>>>>>> d2fecab55a4f8db2e8db247178871dfe0ea65455

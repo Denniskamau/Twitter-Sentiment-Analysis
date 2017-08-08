@@ -7,12 +7,7 @@
 .user-list{
     width: 900px;
     position: absolute;
-<<<<<<< HEAD
     left: 30%;
     top: 30%;
-=======
-    left: 50%;
-    top: 70%;
->>>>>>> d2fecab55a4f8db2e8db247178871dfe0ea65455
     border-width: 10px 10px 10px 10px;
 }
