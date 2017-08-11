@@ -24,9 +24,9 @@ router.get('/user/:id', function(req, res, next){
 });
 
 //save users
-router.post('/user', function(req,re,next){
+router.post('/user', function(req,res,next){
     var user = req.body;
-    if(!user.name || !(user.email +'')){
+    if(!user.username || !(user.email +'') ){
         res.status(400);
         res.json({
             "error":"bad data"
@@ -35,7 +35,7 @@ router.post('/user', function(req,re,next){
         db.users.save(user, function(err,user){
             if (err){
                 res.send(err);
-            }
+            }       
             res.json(user);
         });
     }

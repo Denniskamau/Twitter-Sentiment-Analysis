@@ -21,7 +21,7 @@ export class UsersComponent implements OnInit {
       })
     }
 
-  addTask(event){
+  addUser(event){
     event.preventDefault();
     var newUser = {
       username:this.username,
