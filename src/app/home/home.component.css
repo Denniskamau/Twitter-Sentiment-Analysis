@@ -1,16 +1,12 @@
-<<<<<<< HEAD
 
 
 .jumbotron{
     width: 900px;
     position: absolute;
     left: 20%;
-=======
-.jumbotron{
     width: 900px;
     position: absolute;
     left: 30%;
->>>>>>> d2fecab55a4f8db2e8db247178871dfe0ea65455
     top: 30%;
     border-width: 10px 10px 10px 10px;
 }
@@ -20,12 +16,10 @@
     top: 30%;
     width: 300px;
     border-width: 10px 10px 10px 10px;
-<<<<<<< HEAD
+
 }
 .row{
     position: absolute;
     top:80%;
     left:30%;
-=======
->>>>>>> d2fecab55a4f8db2e8db247178871dfe0ea65455
 }

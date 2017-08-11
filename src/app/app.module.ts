@@ -7,10 +7,10 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { PostsService } from './posts.service';
+import { UserService } from './services/user.service';
 import { UsersComponent } from './users/users.component';
 import {HttpModule} from '@angular/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 
 const appRoutes: Routes = [
@@ -35,10 +35,11 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
     HttpModule,
-    FormsModule 
+    FormsModule,
+    ReactiveFormsModule 
   
   ],
-  providers: [PostsService],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import {User} from '../../User';
-import {AbstactControl,formArray,FormBuilder,FormControl,FormGroup,validators} from '@angular/forms';
+import {AbstractControl,FormArray,FormBuilder,FormControl,FormGroup,Validators} from '@angular/forms';
+
+function passwordMatcher(p:AbstractControl){
+  return p.get('password').value === p.get('confirm').value
+     ?null : {'nomatch':true};
+}
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -9,19 +15,24 @@ import {AbstactControl,formArray,FormBuilder,FormControl,FormGroup,validators} f
   providers:[UserService] 
 })
 export class RegisterComponent implements OnInit {
-  form: FormGroup;
+ form: FormGroup;
 
   
   users:User[];
   username:string;
   email:string;
   password:string;
+
  constructor(private userService: UserService,public fb:FormBuilder) { 
 
-    this.form = this.fb.group({
+   this.form = this.fb.group({
       username:'',
       email:'',
-      password:''
+      account:this.fb.group({
+        password:['',Validators.required],
+       confirm:['',Validators.required]
+      },{validator:passwordMatcher})
+      
     })
     this.userService.getUsers()
       .subscribe(users =>{
