@@ -5,6 +5,7 @@
       <label for="inputName" class="col-lg-2 control-label">UserName</label>
       <div class="col-lg-10">
         <input type="text"  formControlName="username" class="form-control" id="inputName" placeholder="UserName">
+        
       </div>
     </div>
     <div >
@@ -35,7 +36,8 @@
       </div>
     </div>
   </fieldset>
+  <span class="help-block" >form is invalid</span>
 </form>
-<p>form :{{form.value|json}}</p>
-<p>form status:{{form.status|json}}</p>
-<p>account status:{{form.get('account').errors|json}}</p>
+<p>form:{{form.value|json}}</p>
+<p>Form:{{form.status|json}}</p>
+<p>password:{{form.account.password.status|json}}</p>
