@@ -21,6 +21,7 @@ import { ChartComponent } from './chart/chart.component';
 
 
 
+
 const appRoutes: Routes = [
   { path:'', component:HomeComponent},
   { path: 'login', component: LoginComponent },
