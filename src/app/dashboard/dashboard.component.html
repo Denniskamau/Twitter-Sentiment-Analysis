@@ -1,3 +1,41 @@
-<p>
-  dashboard works!
-</p>
+<div class="container-fluid">
+  <div style="float: left;">
+  
+    <div class="sidenavbar" align="left">
+      <ul class="nav navbar-nav ">
+          <li><a routerLink="/dashboard" routerLinkActive="active"> Dashboard</a></li>
+          <li><a routerLink="/user" routerLinkActive="active">UserProfile</a></li>
+          <li><a routerLink="/history"routerLinkActive="active"> History</a></li>
+          <li><a routerLink="/chart"routerLinkActive="active"> Chart</a></li>
+          
+                    
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div style="float: left;">
+  <form class="form-horizontal">
+    <fieldset>
+      <legend>Search Field</legend>
+      <div class="form-group">
+        <label for="inputWord" class="col-lg-2 control-label">Search</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control" id="inputWord" placeholder="Search Item">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-lg-10 col-lg-offset-2">
+      
+          <button type="submit" routerLink="/dashboard" routerLinkActive="active"class="btn btn-primary">Start</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+<router-outlet>
+  <app-classification></app-classification>
+</router-outlet>

@@ -1,0 +1,7 @@
+.form-horizontal{
+    position:absolute;
+    top: 10%;
+    left: 30%;
+    width: 300px;
+    border-width: 10px 10px 10px 10px;
+}

@@ -1,0 +1,21 @@
+
+.first{
+    width: 900px;
+    position: absolute;
+    width: 900px;
+    position: absolute;
+    left: 30%;
+    top: 40%;
+    border-width: 10px 10px 10px 10px;
+}
+
+
+.second{
+    width: 900px;
+    position: absolute;
+    width: 900px;
+    position: absolute;
+    left: 30%;
+    top: 70%;
+    border-width: 10px 10px 10px 10px;
+}
