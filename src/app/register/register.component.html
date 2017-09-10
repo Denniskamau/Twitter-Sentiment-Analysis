@@ -1,0 +1,43 @@
+<form class="form-horizontal" (submit)="addUser($event)"  [formGroup] ='form'>
+  <fieldset>
+    <legend>Register</legend>
+    <div >
+      <label for="inputName" class="col-lg-2 control-label">UserName</label>
+      <div class="col-lg-10">
+        <input type="text"  formControlName="username" class="form-control" id="inputName" placeholder="UserName">
+        
+      </div>
+    </div>
+    <div >
+      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+      <div class="col-lg-10">
+      <input type="text"  formControlName="email" class="form-control" id="inputEmail" placeholder="Email">
+      </div>
+    </div>
+    <div formGroupName="account">
+      
+      <div >
+        <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+        <div class="col-lg-10">
+          <input type="password" formControlName="password" class="form-control" id="inputPassword" placeholder="Password">
+        </div>
+      </div>
+        <div >
+        <label for="inputPassword" class="col-lg-2 control-label">Confirm Password</label>
+        <div class="col-lg-10">
+          <input type="password" formControlName="confirm" class="form-control" id="inputPassword" placeholder="Password">
+        </div>
+      </div>
+    </div>
+    <div >
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Cancel</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </fieldset>
+  <span class="help-block" >form is invalid</span>
+</form>
+<p>form:{{form.value|json}}</p>
+<p>Form:{{form.status|json}}</p>
+<p>password:{{form.account.password.status|json}}</p>

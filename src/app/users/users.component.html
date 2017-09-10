@@ -1,0 +1,16 @@
+<div class="user-list">
+  <div *ngFor="let user of users">
+      <div class="col-md-7">
+        {{user.username}}
+      </div>
+      <div class="col-md-7">
+        {{user.email}}
+      </div>
+      <div class="col-md-7">
+        {{user.password}}
+      </div>
+      <div class="col-md-4">
+        <input type="button" value="Delete" class="btn btn-danger"/>
+      </div>
+  </div>
+</div>
