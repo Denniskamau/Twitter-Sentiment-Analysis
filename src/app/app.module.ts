@@ -16,7 +16,7 @@ import { ClassificationComponent } from './classification/classification.compone
 import { UserComponent } from './user/user.component';
 import { HistoryComponent } from './history/history.component';
 import { ChartComponent } from './chart/chart.component';
-
+import {ValidateService} from './services/validate.service'
 
 
 
@@ -66,7 +66,7 @@ const appRoutes: Routes = [
     
   
   ],
-  providers: [UserService,SearchService],
+  providers: [UserService,SearchService,ValidateService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

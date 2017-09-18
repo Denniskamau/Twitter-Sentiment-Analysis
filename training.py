@@ -25,6 +25,9 @@ API
 """
 
 class MyListener(StreamListener):
+    def __init__(self):
+        pass
+
     def on_data(self,data):
         try:
             with open ('data.json','w') as f:
@@ -35,9 +38,19 @@ class MyListener(StreamListener):
             print("Error on_data: %s" % str(e))
         return True
 
+   
+
     def on_error(self, status):
         print(status)
+
         return True
 
-twitter_stream = Stream(auth, MyListener())
-twitter_stream.filter(track=[input("what do you want to search for? : ")])
+    twitter_stream = Stream(auth, MyListener())
+    search=input("what do you want to search for?: ")
+
+    print(twitter_stream.filter(track=[search]))
+
+    
+
+
+

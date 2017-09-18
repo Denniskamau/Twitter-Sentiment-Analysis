@@ -74,11 +74,12 @@ export class RegisterComponent implements OnInit {
       email:this.form.get('email').value,
       password:this.form.get('account.password').value,
       confirm:this.form.get('account.confirm').value
-     
+      
   
     }
     
-    console.log(newUser)
+    console.log(newUser.password)
+    
     this.userService.addUser(newUser)
       .subscribe(user =>{
         this.users.push(user);

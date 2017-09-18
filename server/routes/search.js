@@ -10,19 +10,19 @@ var PythonShell = require('python-shell');
 
 //save search
 router.post('/search', function(req,res,next){
+    
+
     var search = req.body.search;
     //console.log(search)
     var options = {
         scriptPath: '/home/dennis/Desktop/programs/angular/Twitter-Sentiment-Analysis/'
     };
 
-    var pyshell = new PythonShell('index.py',options);
+    var pyshell = new PythonShell('training.py',options);
     pyshell.send(search);
     pyshell.on('message', function (message) {
         console.log(message);
     });
-
-
 
     // var process =  require("child_process")
     //     .spawn(
@@ -34,7 +34,6 @@ router.post('/search', function(req,res,next){
 
     
 });
-
 
 
 module.exports = router;

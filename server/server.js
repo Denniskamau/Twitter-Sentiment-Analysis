@@ -4,7 +4,9 @@ var bodyparser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+
 var search = require('./routes/search');
+
 var port = 3000;
 var app = express();
 
@@ -22,6 +24,7 @@ app.use(bodyparser.urlencoded({extended: false}));
 
 app.use('/', index);
 app.use('/api', users);
+
 app.use('/api', search);
 
 app.listen(port, function(){
