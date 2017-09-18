@@ -5,6 +5,8 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class UserService{
+    authToken:any;
+    user:any;
     constructor(private http:Http){
         console.log('User Service Initialized..');
     }
@@ -13,12 +15,51 @@ export class UserService{
         return this.http.get('/api/users')
             .map(res => res.json());
     }
-    //Adding new users to the API
-    addUser(newuser){
-        console.log(newuser);
+   
+    //Register user
+    registerUser(user){
+        //console.log(user);
         var headers=new Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('/api/user',JSON.stringify(newuser),{headers:headers})
+        return this.http.post('/api/users/register',JSON.stringify(user),{headers:headers})
             .map(res => res.json());
+    }
+
+    authenticateUser(user){
+        var headers=new Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('/api/users/authenticate',JSON.stringify(user),{headers:headers})
+            .map(res => res.json());
+
+    }
+
+    getProfile(){
+        var headers=new Headers();
+        this.loadToken();
+        headers.append('Authorization',this.authToken);
+        headers.append('Content-Type', 'application/json');
+        return this.http.get('/api/users/profile ',{headers:headers})
+            .map(res => res.json());
+
+    }
+
+    storeUserData(token, user){
+        localStorage.setItem('id_token',token);
+        localStorage.setItem('user', JSON.stringify(user));
+        this.authToken=token;
+        this.user= user;
+
+    }
+    logout(){
+        this.authToken=null;
+        this.user=null;
+        localStorage.clear();
+
+    }
+
+    loadToken(){
+        var token = localStorage.getItem('id_token');
+        this.authToken = token;
+
     }
 }

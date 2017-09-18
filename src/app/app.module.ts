@@ -14,9 +14,10 @@ import {HttpModule} from '@angular/http';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { ClassificationComponent } from './classification/classification.component';
 import { UserComponent } from './user/user.component';
-import { HistoryComponent } from './history/history.component';
+import { ProfileComponent } from './profile/profile.component';
 import { ChartComponent } from './chart/chart.component';
-import {ValidateService} from './services/validate.service'
+import {ValidateService} from './services/validate.service';
+import { FlashMessagesModule } from 'ngx-flash-messages';
 
 
 
@@ -29,7 +30,7 @@ const appRoutes: Routes = [
   {path: 'users', component:UsersComponent},
   {path: 'dashboard',component:DashboardComponent} ,
   {path: 'user', component:UserComponent},
-  {path: 'history', component:HistoryComponent},
+  {path: 'profile', component:ProfileComponent},
   {path: 'chart', component:ChartComponent},
   { path: '**', redirectTo: '' }
 
@@ -51,7 +52,7 @@ const appRoutes: Routes = [
     
     UserComponent,
     
-    HistoryComponent,
+    ProfileComponent,
     
     ChartComponent,
     ],
@@ -60,7 +61,8 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpModule,
     FormsModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule ,
+    FlashMessagesModule
 
     
     
