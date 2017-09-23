@@ -18,7 +18,7 @@ router.post('/search', function(req,res,next){
         scriptPath: '/home/dennis/Desktop/programs/angular/Twitter-Sentiment-Analysis/'
     };
 
-    var pyshell = new PythonShell('training.py',options);
+    var pyshell = new PythonShell('stream.py',options);
     pyshell.send(search);
     pyshell.on('message', function (message) {
         console.log(message);
