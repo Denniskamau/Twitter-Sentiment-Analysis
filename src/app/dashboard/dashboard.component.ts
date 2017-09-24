@@ -19,6 +19,7 @@ export class DashboardComponent implements OnInit {
 
   search= this.form.get('search').value;
   searches:Search[];
+  result = [];
   constructor(private searchService: SearchService,public fb:FormBuilder) { 
 
     this.form=this.fb.group({
@@ -36,16 +37,28 @@ export class DashboardComponent implements OnInit {
 
   postSearch($event){
     event.preventDefault();
-     var searchword={
+
+    console.log("Hapo sawa");
+
+    var searchword={
          search:this.form.get('search').value
      }
-     console.log(searchword)
-     this.searchService.postSearch(searchword)
+    //  console.log(searchword)
+    var myResult =  this.searchService.postSearch(searchword)
          .subscribe(search =>{
-           this.searches.push(search);
-           this.search=''
+           this.search='';
+
+
          });
-     
+      
+  
+    }
+   
+  
+    
+      
    }
 
-}
+ 
+
+

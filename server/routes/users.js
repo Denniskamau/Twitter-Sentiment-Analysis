@@ -8,7 +8,7 @@ const User = require('../models/user');
 var config = require('../config/database');
 
 
-mongoose.connect(config.database)
+db=mongoose.connect(config.database)
 
 
 

@@ -13,10 +13,21 @@ export class SearchService{
     
     //Adding new search to the API
     postSearch(searchword){
-        console.log(searchword);
+        console.log("Service : " + JSON.stringify( searchword));
         var headers=new Headers();
         headers.append('Content-Type', 'application/json');
         return this.http.post('/api/search',JSON.stringify(searchword),{headers:headers})
-            .map(res => res.json());    
+            .map(res => {
+                var result = res.json();
+                console.log("Result From Search.js : " + result);
+                return result;
+            });
+
+            
+    }
+
+    getResult(){
+        return this.http.get('/api/search')
+            .map(res => res.json());
     }
 }
