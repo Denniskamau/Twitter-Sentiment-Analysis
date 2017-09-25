@@ -76,9 +76,18 @@
                     </fieldset>
                 </form>
 
+                
+
                 <div class="line"></div>
                   <router-outlet>
-                    <app-classification></app-classification>
+                       
+
+                        <div class="results">
+                                <button (click)="loadResult()">Load Result</button>
+                                {{results | json}}
+                                <h2>My favorite hero is: {{results}}</h2>
+                            </div>
+                    
                   </router-outlet>
                
                

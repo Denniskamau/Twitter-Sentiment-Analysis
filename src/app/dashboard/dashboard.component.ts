@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
 
   search= this.form.get('search').value;
   searches:Search[];
-  result = [];
+  results = [];
   constructor(private searchService: SearchService,public fb:FormBuilder) { 
 
     this.form=this.fb.group({
@@ -33,6 +33,14 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  loadResult(){
+    console.log("load result initialized");
+    var list = this.searchService.getResult();
+    this.results.push(list);
+    //var show = console.log(window.$log = ("Results from list : " +this.results));
+    //alert (show);
   }
 
   postSearch($event){
@@ -50,7 +58,7 @@ export class DashboardComponent implements OnInit {
 
 
          });
-      
+  
   
     }
    

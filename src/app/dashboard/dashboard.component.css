@@ -44,6 +44,14 @@ a, a:hover, a:focus {
     border-bottom: 1px dashed #ddd;
     margin: 40px 0;
 }
+.results{
+    position:absolute;
+    top: 20%;
+    width: 300px;
+    border-width: 10px 10px 10px 10px;
+    
+
+}
 
 /* ---------------------------------------------------
     SIDEBAR STYLE

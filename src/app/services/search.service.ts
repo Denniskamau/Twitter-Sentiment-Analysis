@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class SearchService{
+    tweets= []
     constructor(private http:Http){
         console.log('Search Service Initialized..');
     }
@@ -20,14 +21,22 @@ export class SearchService{
             .map(res => {
                 var result = res.json();
                 console.log("Result From Search.js : " + result);
+                this.tweets.push(result);
                 return result;
             });
-
+         
             
     }
 
     getResult(){
-        return this.http.get('/api/search')
-            .map(res => res.json());
+        
+        console.log("results from Get Result: "+this.tweets);
+        var list = JSON.stringify( this.tweets);
+        return list 
+        
+        //return JSON.stringify( this.tweets)
+       // return this.tweets
+                
     }
+    
 }
