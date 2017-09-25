@@ -46,7 +46,7 @@ a, a:hover, a:focus {
 }
 .results{
     position:absolute;
-    top: 20%;
+    top: 80%;
     width: 300px;
     border-width: 10px 10px 10px 10px;
     

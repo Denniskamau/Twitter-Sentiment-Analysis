@@ -84,10 +84,18 @@
 
                         <div class="results">
                                 <button (click)="loadResult()">Load Result</button>
-                                {{results | json}}
-                                <h2>My favorite hero is: {{results}}</h2>
+                                
+                                <div class="analysis">
+                                    <h3>The Analysis results are : {{myResult}}</h3>
+                                    <p>Results:</p>
+                                    <ul>
+                                        <li *ngFor = "let result of results">
+                                            {{result}}
+                                        </li>
+                                    </ul>
+                                </div>   
                             </div>
-                    
+                 
                   </router-outlet>
                
                

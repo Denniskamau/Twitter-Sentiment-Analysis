@@ -12,14 +12,15 @@ import {Search} from '../../Search';
 /* Set the width of the side navigation to 250px */
 
 export class DashboardComponent implements OnInit {
-
+  results = [];
+  myResult = this.results[1];
   form = new FormGroup({
     search:new FormControl
   });
 
   search= this.form.get('search').value;
   searches:Search[];
-  results = [];
+ 
   constructor(private searchService: SearchService,public fb:FormBuilder) { 
 
     this.form=this.fb.group({
