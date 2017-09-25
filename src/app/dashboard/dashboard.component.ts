@@ -39,7 +39,7 @@ export class DashboardComponent implements OnInit {
   loadResult(){
     console.log("load result initialized");
     var list = this.searchService.getResult();
-    this.results.push(list);
+    this.results.push(JSON.stringify(list));
     //var show = console.log(window.$log = ("Results from list : " +this.results));
     //alert (show);
   }

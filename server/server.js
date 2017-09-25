@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 var config = require('./config/database')
 var search = require('./routes/search');
 
-var port = 3000;
+var port = process.env.PORT || 8080;
 var app = express();
 mongoose.connect(config.database )
 //view Engine
