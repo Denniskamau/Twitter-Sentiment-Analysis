@@ -32,10 +32,10 @@ require('./config/passport')(passport);
 //Set static files
 app.use(express.static(path.join(__dirname,'dist')));
 
-app.use('/', index);
-app.use('/api', users);
+app.use('', index);
+app.use('api', users);
 
-app.use('/api', search);
+app.use('api', search);
 
 app.listen(port, function(){
     console.log('Server running on port' +port);
