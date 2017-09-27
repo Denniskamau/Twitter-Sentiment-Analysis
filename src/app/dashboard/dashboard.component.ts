@@ -13,6 +13,8 @@ import {Search} from '../../Search';
 
 export class DashboardComponent implements OnInit {
   results = [];
+  positiveTweet:String;
+  negativeTweet:String ;
   myResult = this.results[1];
   form = new FormGroup({
     search:new FormControl
@@ -39,7 +41,14 @@ export class DashboardComponent implements OnInit {
   loadResult(){
     console.log("load result initialized");
     var list = this.searchService.getResult();
-    this.results.push(JSON.stringify(list));
+    var fields = list.split('%');
+    var positive = fields [0];
+    var negative = fields [1];
+    this.positiveTweet = positive;
+    this.negativeTweet = negative;
+    console.log("Positive results" + positive);
+    console.log ("negative results" + negative);
+    //this.results.push(JSON.stringify(listItem));
     //var show = console.log(window.$log = ("Results from list : " +this.results));
     //alert (show);
   }
